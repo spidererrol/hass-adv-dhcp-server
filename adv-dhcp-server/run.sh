@@ -14,4 +14,8 @@ if ! test -L /var/lib/dhcp; then
     ln -s /data/ /var/lib/dhcp
 fi
 
-exec /usr/sbin/dhcpd -f -d -user dhcp -group dhcp $(bashio::config.device)
+if [ ! -e /var/lib/dhcp/dhcpd.leases ]; then
+    touch /var/lib/dhcp/dhcpd.leases
+fi
+
+exec /usr/sbin/dhcpd -f -d -user dhcp -group dhcp $(bashio::config device)
