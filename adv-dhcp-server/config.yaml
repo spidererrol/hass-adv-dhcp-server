@@ -16,7 +16,7 @@ host_network: true
 startup: "before"
 init: false
 options:
-  device: eth0
+  device: end0
 schema:
   device: str
 map:
