@@ -1,5 +1,5 @@
 name: "DHCPd Server"
-version: "0.5"
+version: "0.6"
 slug: adv-dhcp-server
 description: >-
   Advanced DHCP Server
