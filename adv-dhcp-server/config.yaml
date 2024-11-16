@@ -1,5 +1,5 @@
 name: "DHCPd Server"
-version: "1.0"
+version: "0.1"
 slug: adv-dhcp-server
 description: >-
   Advanced DHCP Server
@@ -11,7 +11,7 @@ arch:
   - i386
 url: "https://github.com/spidererrol/hass-adv-dhcp-server"
 ports:
-  67/tcp: 97
+  67/tcp: 67
 host_network: true
 startup: "before"
 init: false
