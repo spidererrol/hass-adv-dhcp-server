@@ -21,4 +21,3 @@ schema:
   device: str
 map:
   - "addon_config:rw"
-  - "data:rw"
