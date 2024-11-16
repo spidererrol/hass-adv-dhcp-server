@@ -12,9 +12,9 @@ ls -hal /var/lib/dhcp/
 
 
 if ! test -L /etc/dhcp; then
-    mv -n /etc/dhcp/* /addon_config/
+    mv -n /etc/dhcp/* /config/
     rm -rf /etc/dhcp
-    ln -s /addon_config/ /etc/dhcp
+    ln -s /config/ /etc/dhcp
 fi
 
 if ! test -L /var/lib/dhcp; then
