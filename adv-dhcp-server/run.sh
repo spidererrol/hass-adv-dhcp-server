@@ -20,10 +20,4 @@ if [ ! -e /var/lib/dhcp/dhcpd.leases ]; then
     touch /var/lib/dhcp/dhcpd.leases
 fi
 
-/usr/sbin/dhcpd -f -d -user dhcp -group dhcp $(bashio::config device) || :
-
-echo "DEBUG MODE: Waiting"
-
-sleep 3600
-
-echo "Bye"
+exec /usr/sbin/dhcpd -f -d -user dhcp -group dhcp $(bashio::config device)
