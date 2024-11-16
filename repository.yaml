@@ -1,0 +1,4 @@
+# https://developers.home-assistant.io/docs/add-ons/repository#repository-configuration
+name: Advanced DHCPd Server repository
+url: 'https://github.com/spidererrol/hass-adv-dhcp-server'
+maintainer: Timothy Hinchcliffe <gitprojects.qm@spidererrol.co.uk>
