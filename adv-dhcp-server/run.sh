@@ -1,5 +1,17 @@
 #!/usr/bin/env bashio
 
-bashio::config.config > /etc/dhcp/dhcpd.conf
+shopt -s nullglob
+
+if ! test -L /etc/dhcp; then
+    mv -n /etc/dhcp/* /addon_config/
+    rm -rf /etc/dhcp
+    ln -s /addon_config/ /etc/dhcp
+fi
+
+if ! test -L /var/lib/dhcp; then
+    mv -n /var/lib/dhcp/* /data/
+    rm -rf /var/lib/dhcp
+    ln -s /data/ /var/lib/dhcp
+fi
 
 exec /usr/sbin/dhcpd -f -d -user dhcp -group dhcp $(bashio::condig.device)

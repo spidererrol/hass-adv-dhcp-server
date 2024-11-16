@@ -17,27 +17,8 @@ startup: "before"
 init: false
 options:
   device: eth0
-  config: |
-    not authoritative;
-
-    default-lease-time 86400;
-    max-lease-time 259200;
-
-    subnet 192.168.0.0 netmask 255.255.255.0 {
-      option routers 192.168.0.1;
-      option subnet-mask 255.255.255.0;
-      range 192.168.0.100 192.168.0.250;
-      option broadcast-address 192.168.0.255;
-      option domain-name-servers 8.8.8.8,1.1.1.1;
-      option domain-name "my.lan";
-      option domain-search "my.lan";
-
-    }
-
-    host MyHost {
-      hardware ethernet 00:11:22:33:44:55;
-      fixed-address 192.168.0.2;
-    }
 schema:
   device: str
-  config: str
+map:
+  - "addon_config:rw"
+  - "data:rw"
