@@ -1,5 +1,7 @@
 #!/usr/bin/with-contenv bashio
 
+echo "Starting at $(date)"
+
 shopt -s nullglob
 
 if ! test -L /etc/dhcp; then
@@ -18,4 +20,10 @@ if [ ! -e /var/lib/dhcp/dhcpd.leases ]; then
     touch /var/lib/dhcp/dhcpd.leases
 fi
 
-exec /usr/sbin/dhcpd -f -d -user dhcp -group dhcp $(bashio::config device)
+/usr/sbin/dhcpd -f -d -user dhcp -group dhcp $(bashio::config device) || :
+
+echo "DEBUG MODE: Waiting"
+
+sleep 3600
+
+echo "Bye"
